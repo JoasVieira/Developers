@@ -74,5 +74,14 @@ export const Container = styled.div`
 `
 
 export const Footer = styled.footer`
-  margin-top: 16px;
+  padding: 16px 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ul li,
+  svg {
+    cursor: pointer;
+  }
 `
