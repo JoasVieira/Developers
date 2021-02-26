@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  web:
+    container_name: developer
+    build: .
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "3333:80"
+  db:
+    build: 
+      context: mysql
+    container_name: mysql
+    ports:
+      - 3309:3306
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: developers

@@ -1,0 +1,43 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "standard",
+    "prettier"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "prettier",
+    "import-helpers"
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+    "space-before-function-paren": "off",
+    "react/prop-types": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"]}],
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always", // new line between groups
+        "groups": [
+          "/^react/",
+          "module",
+          ["parent", "sibling", "index"]
+        ],
+        "alphabetize": { "order": "asc", "ignoreCase": true }
+      }
+    ]
+  }
+}
